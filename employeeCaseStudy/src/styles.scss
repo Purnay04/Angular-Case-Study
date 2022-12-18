@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+:root,
+::after,
+::before{
+    --font-family: 'Bitter', serif;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+body,
+::after,
+::before{
+    width: inherit;
+    height: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
