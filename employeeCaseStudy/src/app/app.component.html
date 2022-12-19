@@ -3,7 +3,9 @@
   <div>
     <span> Employee Portal </span>
   </div>
-  <div></div>
+  <div>
+    <button mat-button color="primary" *ngIf="signOutBtn" (click)="signOut()">Sign Out</button>
+  </div>
 </div>
 <!-- body -->
 <div fxFlex fxLayout="column">

@@ -3,7 +3,8 @@ import { Employee } from "../../models/Employee";
 
 export enum EmployeeActionTypes {
     GetEmployeeDetails = '[Employee] Retrieve Employee INFO',
-    GetEmployeeDetailsSuccess = '[Employee] Successful Retrieval Employee INFO'
+    GetEmployeeDetailsSuccess = '[Employee] Success-Retrieval Employee INFO',
+    AddEmployee = '[Employee] Add Employee INFO'
 }
 
 export class GetEmployeeDetails implements Action {
@@ -15,6 +16,12 @@ export class GetEmployeeDetailsSuccess implements Action{
     constructor(public payload: Employee[]){}
 }
 
+export class AddEmployee implements Action{
+    public readonly type = EmployeeActionTypes.AddEmployee
+    constructor(public payload: Employee){}
+}
+
 export type EmployeeAction = 
     | GetEmployeeDetails 
     | GetEmployeeDetailsSuccess
+    | AddEmployee

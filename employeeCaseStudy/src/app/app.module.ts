@@ -11,6 +11,7 @@ import { EmployeeReducer } from './modules/core/store/reducers/Employee.reducers
 import { EmployeeEffects } from './modules/core/store/effects/employee.effects';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserAnimationsModule,
     AppRoutingModule,
     FlexLayoutModule,
-    StoreModule.forRoot({}, {}),
+    MatButtonModule,
+    StoreModule.forRoot({
+      'login': LoginReducer
+    }, {}),
     EffectsModule.forRoot([
       EmployeeEffects
     ]),

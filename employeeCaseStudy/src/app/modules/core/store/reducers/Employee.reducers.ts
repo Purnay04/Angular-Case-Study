@@ -1,6 +1,6 @@
 import { Action } from "@ngrx/store";
 import { Employee } from "../../models/Employee";
-import { EmployeeActionTypes, GetEmployeeDetailsSuccess } from "../actions/employee.actions";
+import { AddEmployee, EmployeeActionTypes, GetEmployeeDetailsSuccess } from "../actions/employee.actions";
 
 export interface EmployeesState{
     employees: ReadonlyArray<Employee>
@@ -19,6 +19,14 @@ export function EmployeeReducer(state = initialState, action: Action): Employees
                 return {
                     ...state,
                     employees: [...state.employees, ...action.payload],
+                    loading: true
+                }
+            return state
+        case EmployeeActionTypes.AddEmployee:
+            if(action instanceof AddEmployee)
+                return {
+                    ...state,
+                    employees: [...state.employees, action.payload],
                     loading: true
                 }
             return state

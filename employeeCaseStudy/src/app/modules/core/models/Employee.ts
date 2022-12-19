@@ -1,8 +1,8 @@
 export interface Employee {
     empId: string
-    firstName: string,
-    lastName?: string,
+    fname: string,
+    lname?: string,
     department: string,
-    dateOfJoining?: string,
+    dateofjoining?: string,
     password: string
 }
