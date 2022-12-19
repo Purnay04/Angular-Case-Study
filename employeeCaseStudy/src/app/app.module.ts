@@ -10,6 +10,7 @@ import { LoginReducer } from './modules/core/store/reducers/login.reducers';
 import { EmployeeReducer } from './modules/core/store/reducers/Employee.reducers';
 import { EmployeeEffects } from './modules/core/store/effects/employee.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     EffectsModule.forRoot([
       EmployeeEffects
     ]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+    }),
     HttpClientModule
   ],
   providers: [],

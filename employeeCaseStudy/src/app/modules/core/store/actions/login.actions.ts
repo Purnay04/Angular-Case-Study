@@ -1,22 +1,22 @@
 import { Action } from '@ngrx/store';
 
 export enum LoginActionTypes { 
-    DoLogin = '[Login] Do Login',
-    GetLoggedEmployee = '[Login] Retrieve Logged Person'
+    LogIn = '[Login] Log In',
+    LogOut = '[Login] Log Out'
 }
 
-export class DoLogin implements Action{
-    public readonly type = LoginActionTypes.DoLogin;
+export class LogIn implements Action{
+    public readonly type = LoginActionTypes.LogIn;
     constructor(public empCred: {
         empId: string,
-        password: string
     }) {}
 };
 
-export class GetLoggedEmployee implements Action{
-    public readonly type = LoginActionTypes.GetLoggedEmployee;
-}
+export class LogOut implements Action{
+    public readonly type = LoginActionTypes.LogOut;
+};
+
 
 export type LoginActions = 
-        | DoLogin
-        | GetLoggedEmployee
+        | LogIn
+        | LogOut
